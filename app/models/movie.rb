@@ -30,4 +30,7 @@ class Movie < ApplicationRecord
     #  this also works:  has_many(:method name), if foreign key name is named conventionally class_id
   has_many(:characters)
 
+  has_many(:cast, { :through => :characters, :source => :actor})
+
+
 end

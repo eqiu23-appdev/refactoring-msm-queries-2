@@ -21,4 +21,6 @@ class Director < ApplicationRecord
 
   has_many(:filmography, { :class_name => "Movie", :foreign_key => "director_id"})
 
+  has_many(:actor , { :through => :filmography, :source => :cast })
+
 end
